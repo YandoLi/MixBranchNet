@@ -1,93 +1,139 @@
-# Yando_TumorClassification_code
+# MixBranchNet
 
+Author: Yanduo Li, Lin Chen*
 
+Email:  chenlin21@xmu.edu.cn chenlin0430@163.com   
 
-## Getting started
+Affiliations:
+Department of Electronic Science, Xiamen University, Xiamen, Fujian, China
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Python version: 3.11.5
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Matlab version: R2023b
 
-## Add your files
+---
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## Overview
 
+This toolbox contains demo for the following papers:
+
+**Li Y, Chen Z, Huang Y, Fan Y, Meng Y, Chen L\*.**  
+MixBranchNet: A Task-Adaptive Network for Glioma Segmentation and Genotype Prediction by Exploiting Spatio-spectral Correlations in CEST MRI.
+*Magn Reson Med.2025*;
+
+Welcome your comments and suggestions.
+
+---
+## Setup
+1.Clone this repository:
+```bash
+git clone https://github.com/LinChenMRI/MixBranchNet.git
 ```
-cd existing_repo
-git remote add origin http://10.168.2.119:8888/Yando/yando_tumorclassification_code.git
-git branch -M main
-git push -uf origin main
+2.Install the required dependencies:
+```bash
+pip install -r requirements.txt
 ```
+3.Ensure you have the necessary dataset available in the data/ folder.
 
-## Integrate with your tools
+4.For Matlab, make sure you have **R2023b** or later and the necessary toolboxes for image processing.
 
-- [ ] [Set up project integrations](http://10.168.2.119:8888/Yando/yando_tumorclassification_code/-/settings/integrations)
 
-## Collaborate with your team
+---
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## Pretrained Model Access
 
-## Test and Deploy
+Due to file size limitations on GitHub, the pretrained model weights are hosted on **Zenodo**:
 
-Use the built-in continuous integration in GitLab.
+- **Zenodo record:** [https://doi.org/10.5281/zenodo.17453687](https://doi.org/10.5281/zenodo.17453687)
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+**Included files:**
+- `IDH_genotype.pth` 
+- `IDH_genotype.pth` 
+- `Segment.pth` 
+---
 
-***
+## Repository Structure
 
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
+```text
+MixBranchNet/
+©À©¤ data/  
+©¦  ©À©¤ Savedata.mat                           # Data for Segmentation                          
+©¦  ©À©¤ IDH_patch/                             # Extracted Patch data for IDH genotype prediction
+©¦  ©À©¤ MGMT_patch/                            # Extracted Patch data for MGMT genotype prediction
+©¦  ©¸©¤ test_case/                             # Example raw data 
+©¦     ©À©¤ Mask/                                   # Brain and tumor mask for evaluation
+©¦     ©À©¤ MRI_image/                              # The CE-T1w and FLAIR MRI
+©¦     ©À©¤ CEST.mat                                # The preprocessed CEST images with 41 frequency offsets
+©¦     ©À©¤ M0_Image.mat                            # The M0 image acquired at 100 ppm
+©¦     ©¸©¤ Case_information.txt                    # The case information 
+©¦
+©À©¤ mat_code/                              # Core Matlab functions 
+©¦  ©À©¤ m1_Segmentation_data_generation.m      
+©¦  ©À©¤ m2_Segmentation_post_processing.m   
+©¦  ©À©¤ m3_Segmentation_visualization.m     
+©¦  ©À©¤ m4_Genotype_patch_extraction.m        
+©¦  ©À©¤ m5_Genotype_patch_aggregation.m        
+©¦  ©¸©¤ m6_Patient_result.m                       
+©¦
+©À©¤ model/                                 # Deep learning models
+©¦  ©À©¤ MixingBlock.py                          # The Mixing Block implementation
+©¦  ©¸©¤ MixUNet.py                              # The MixBranchNet
+©¦
+©À©¤ weights/                               # Pretrained weights (full weights on Zenodo)
+©¦  ©À©¤ IDH_genotype.pth                
+©¦  ©À©¤ MGMT_genotype.pth               
+©¦  ©¸©¤ Segment.pth
+©¦
+©À©¤ result/                                # Example results
+©¦  ©À©¤ IDH_genotype/                           # IDH genotype prediction results and maps
+©¦  ©À©¤ MGMT_genotype/                          # MGMT genotype prediction results and maps
+©¦  ©¸©¤ Segmentation/                           # Segmentation results
+©¦
+©À©¤ dice_coefficient_loss.py               # Custom Dice coefficient loss function
+©À©¤ distributed_utils.py                   # Utilities for distributed training
+©À©¤ my_dataset.py                          # Custom dataset handling
+©À©¤ utils.py                               # Initial model parameters and Helper functions
+©À©¤ test_segmentation.py                   # Script for testing segmentation
+©À©¤ test_genotype.py                       # Script for testing genotype prediction
+©À©¤ requirements.txt                       # Python dependencies
+©¸©¤ README.md
+```
+---
 ## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+You can run the code for testing and training using the provided scripts.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## Segmentation Testing
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+1.Runs Matlab code: `m1_Segmentation_data_generation.m` using the bundled example data in `./data/test_case` and 
+generate **Savedata.mat** to `./data`
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+2.Runs Segmentation Script using the generated **Savedata.mat** and saves segmentation outputs to `./result/Segmentation`:
+```bash
+python test_segmentation.py 
+```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+3.Runs Matlab code: `m2_Segmentation_post_processing.m` to process the segmentation outputs and 
+generate **pred_mask_post_processing.mat** to `./result/Segmentation`. 
+We can visualize the segmentation results through Matlab code: `m3_Segmentation_visualization.m`.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## Genotype Prediction Testing
+4.Runs Matlab code: `m4_Genotype_patch_extraction.m` using the segmented tumor mask **pred_mask_post_processing.mat** 
+in `./result/Segmentation` to generate patches to `./data/IDH_patch` or `./data/MGMT_patch`. 
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+5.Runs Genotype Prediction Script using the generated patch and saves outputs to `./result/IDH_genotype` or `./result/MGMT_genotype`:
+```bash
+python test_genotype.py 
+```
 
-## License
-For open source projects, say how it is licensed.
+6.Runs Matlab code: `m5_Genotype_patch_aggregation.m` to aggregate the predicted patches and 
+generate **Result_Map.mat** to `./result/IDH_genotype` or `./result/MGMT_genotype`. 
+We can visualize the genotype prediction results through Matlab code: `m6_Patient_result.m`.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+---
+## Contact
+
+Welcome your comments and suggestions.
+
+**Last updated:** Oct 27, 2025
+
