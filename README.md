@@ -56,47 +56,47 @@ Due to file size limitations on GitHub, the pretrained model weights are hosted 
 
 ```text
 MixBranchNet/
-©À©¤ data/  
-©¦  ©À©¤ Savedata.mat                           # Data for Segmentation                          
-©¦  ©À©¤ IDH_patch/                             # Extracted Patch data for IDH genotype prediction
-©¦  ©À©¤ MGMT_patch/                            # Extracted Patch data for MGMT genotype prediction
-©¦  ©¸©¤ test_case/                             # Example raw data 
-©¦     ©À©¤ Mask/                                   # Brain and tumor mask for evaluation
-©¦     ©À©¤ MRI_image/                              # The CE-T1w and FLAIR MRI
-©¦     ©À©¤ CEST.mat                                # The preprocessed CEST images with 41 frequency offsets
-©¦     ©À©¤ M0_Image.mat                            # The M0 image acquired at 100 ppm
-©¦     ©¸©¤ Case_information.txt                    # The case information 
-©¦
-©À©¤ mat_code/                              # Core Matlab functions 
-©¦  ©À©¤ m1_Segmentation_data_generation.m      
-©¦  ©À©¤ m2_Segmentation_post_processing.m   
-©¦  ©À©¤ m3_Segmentation_visualization.m     
-©¦  ©À©¤ m4_Genotype_patch_extraction.m        
-©¦  ©À©¤ m5_Genotype_patch_aggregation.m        
-©¦  ©¸©¤ m6_Patient_result.m                       
-©¦
-©À©¤ model/                                 # Deep learning models
-©¦  ©À©¤ MixingBlock.py                          # The Mixing Block implementation
-©¦  ©¸©¤ MixUNet.py                              # The MixBranchNet
-©¦
-©À©¤ weights/                               # Pretrained weights (full weights on Zenodo)
-©¦  ©À©¤ IDH_genotype.pth                
-©¦  ©À©¤ MGMT_genotype.pth               
-©¦  ©¸©¤ Segment.pth
-©¦
-©À©¤ result/                                # Example results
-©¦  ©À©¤ IDH_genotype/                           # IDH genotype prediction results and maps
-©¦  ©À©¤ MGMT_genotype/                          # MGMT genotype prediction results and maps
-©¦  ©¸©¤ Segmentation/                           # Segmentation results
-©¦
-©À©¤ dice_coefficient_loss.py               # Custom Dice coefficient loss function
-©À©¤ distributed_utils.py                   # Utilities for distributed training
-©À©¤ my_dataset.py                          # Custom dataset handling
-©À©¤ utils.py                               # Initial model parameters and Helper functions
-©À©¤ test_segmentation.py                   # Script for testing segmentation
-©À©¤ test_genotype.py                       # Script for testing genotype prediction
-©À©¤ requirements.txt                       # Python dependencies
-©¸©¤ README.md
+â”œâ”€ data/  
+â”‚  â”œâ”€ Savedata.mat                           # Data for Segmentation                          
+â”‚  â”œâ”€ IDH_patch/                             # Extracted Patch data for IDH genotype prediction
+â”‚  â”œâ”€ MGMT_patch/                            # Extracted Patch data for MGMT genotype prediction
+â”‚  â””â”€ test_case/                             # Example raw data 
+â”‚     â”œâ”€ Mask/                                   # Brain and tumor mask for evaluation
+â”‚     â”œâ”€ MRI_image/                              # The CE-T1w and FLAIR MRI
+â”‚     â”œâ”€ CEST.mat                                # The preprocessed CEST images with 41 frequency offsets
+â”‚     â”œâ”€ M0_Image.mat                            # The M0 image acquired at 100 ppm
+â”‚     â””â”€ Case_information.txt                    # The case information 
+â”‚
+â”œâ”€ mat_code/                              # Core Matlab functions 
+â”‚  â”œâ”€ m1_Segmentation_data_generation.m      
+â”‚  â”œâ”€ m2_Segmentation_post_processing.m   
+â”‚  â”œâ”€ m3_Segmentation_visualization.m     
+â”‚  â”œâ”€ m4_Genotype_patch_extraction.m        
+â”‚  â”œâ”€ m5_Genotype_patch_aggregation.m        
+â”‚  â””â”€ m6_Patient_result.m                       
+â”‚
+â”œâ”€ model/                                 # Deep learning models
+â”‚  â”œâ”€ MixingBlock.py                          # The Mixing Block implementation
+â”‚  â””â”€ MixUNet.py                              # The MixBranchNet
+â”‚
+â”œâ”€ weights/                               # Pretrained weights (full weights on Zenodo)
+â”‚  â”œâ”€ IDH_genotype.pth                
+â”‚  â”œâ”€ MGMT_genotype.pth               
+â”‚  â””â”€ Segment.pth
+â”‚
+â”œâ”€ result/                                # Example results
+â”‚  â”œâ”€ IDH_genotype/                           # IDH genotype prediction results and maps
+â”‚  â”œâ”€ MGMT_genotype/                          # MGMT genotype prediction results and maps
+â”‚  â””â”€ Segmentation/                           # Segmentation results
+â”‚
+â”œâ”€ dice_coefficient_loss.py               # Custom Dice coefficient loss function
+â”œâ”€ distributed_utils.py                   # Utilities for distributed training
+â”œâ”€ my_dataset.py                          # Custom dataset handling
+â”œâ”€ utils.py                               # Initial model parameters and Helper functions
+â”œâ”€ test_segmentation.py                   # Script for testing segmentation
+â”œâ”€ test_genotype.py                       # Script for testing genotype prediction
+â”œâ”€ requirements.txt                       # Python dependencies
+â””â”€ README.md
 ```
 ---
 ## Usage
