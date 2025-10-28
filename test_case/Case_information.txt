@@ -1,7 +1,0 @@
-Case Information：
-	Morphology: A diffuse astrocytoma is located in the left frontal lobe.
-	Age (year): 45
-	Gender: male
-	WHO CNS grade：II
-	IDH genotype：IDH mutation
-	MGMT genotype：MGMT unmethylated 
