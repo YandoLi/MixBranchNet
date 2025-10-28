@@ -1,0 +1,18 @@
+global correct: 90.5
+average row correct: ['90.5', 'nan']
+IoU: ['90.5', '0.0']
+mean IoU: 45.2
+
+ConfusionMatrix_IDH:
+                       Pred label
+                      IDH0    IDH1
+        True    IDH0  3839,   405
+        label   IDH1  0,   0
+
+IDH Accuracy: 90.45712%
+IDH Sensitivity: 90.45712%
+IDH Specificity: nan%
+IDH Recall: 90.45712%
+IDH Precision: 100.00000%
+IDH F1 Score: 94.98948%
+Whole Dice: 90.97222%

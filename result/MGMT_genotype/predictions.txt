@@ -1,0 +1,18 @@
+global correct: 88.6
+average row correct: ['88.6', 'nan']
+IoU: ['88.6', '0.0']
+mean IoU: 44.3
+
+ConfusionMatrix_MGMT:
+                       Pred label
+                      MGMT0    MGMT1
+        True    MGMT0  3998,   514
+        label   MGMT1  0,   0
+
+MGMT Accuracy: 88.60816%
+MGMT Sensitivity: 88.60816%
+MGMT Specificity: nan%
+MGMT Recall: 88.60816%
+MGMT Precision: 100.00000%
+MGMT F1 Score: 93.96005%
+Whole Dice: 91.34948%
