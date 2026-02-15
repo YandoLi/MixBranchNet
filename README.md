@@ -19,7 +19,7 @@ This toolbox contains demo for the following papers:
 
 **Li Y, Chen Z, Huang Y, Fan Y, Meng Y, Chen L\*.**  
 MixBranchNet: A Task-Adaptive Network for Glioma Segmentation and Genotype Prediction by Exploiting Spatio-spectral Correlations in CEST MRI.
-*NMR Biomed.2025*;
+*Front Oncol.2025*;
 
 Welcome your comments and suggestions.
 
@@ -27,7 +27,7 @@ Welcome your comments and suggestions.
 ## Setup
 1.Clone this repository:
 ```bash
-git clone https://github.com/LinChenMRI/MixBranchNet.git
+git clone https://github.com/YandoLi/MixBranchNet.git
 ```
 2.Install the required dependencies:
 ```bash
@@ -77,7 +77,7 @@ MixBranchNet/
 │
 ├─ model/                                 # Deep learning models
 │  ├─ MixingBlock.py                          # The Mixing Block implementation
-│  └─ MixUNet.py                              # The MixBranchNet
+│  └─ MixBranchNet.py                         # The MixBranchNet
 │
 ├─ weights/                               # Pretrained weights (full weights on Zenodo)
 │  ├─ IDH_genotype.pth                
